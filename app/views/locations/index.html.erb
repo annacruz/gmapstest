@@ -1,34 +1,48 @@
-<h1>Listing locations</h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list" id="markers_list">
+          <li class="nav-header">Markers List</li>
+            <!-- <ul id="markers_list"></ul> -->
+        </ul>
+      </div><!--/.well -->
+    </div><!--/span-->
+    <div class="span9">
+      <div class="hero-unit">
+<!--         <h1>Listing Locations</h1>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Longitude</th>
-    <th>Latitude</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <% @locations.each do |location| %>
+          <tr>
+            <td><%= location.name %></td>
+            <td><%= location.address %></td>
+            <td><%= location.longitude %></td>
+            <td><%= location.latitude %></td>
+            <td><%= link_to 'Show', location %></td>
+            <td><%= link_to 'Edit', edit_location_path(location) %></td>
+            <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </table>
 
-<% @locations.each do |location| %>
-  <tr>
-    <td><%= location.name %></td>
-    <td><%= location.address %></td>
-    <td><%= location.longitude %></td>
-    <td><%= location.latitude %></td>
-    <td><%= link_to 'Show', location %></td>
-    <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <br /> -->
 
-<br />
+        <%= link_to 'Add New Location', new_location_path %>
+        <%#= gmaps4rails(@json) %>
 
-<%= link_to 'New Location', new_location_path %>
-<%#= gmaps4rails(@json) %>
+        <%= gmaps("markers" => {"data" => @json, "options" => {"list_container" => "markers_list"} }, "polylines" => {"data" => @polyjson})%>
 
-<%= gmaps("markers" => {"data" => @json, "options" => {"list_container" => "markers_list"} }, "polylines" => {"data" => @polyjson})%>
-
-<ul id="markers_list"></ul>
+      </div>
+    </div>
+  </div>
+</div>
