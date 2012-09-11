@@ -10,4 +10,8 @@ class Location < ActiveRecord::Base
     "<h4>#{name}</h4>" << "<h4>#{address}</h4>"
   end
 
+  def gmaps4rails_sidebar
+    name 
+  end
+
 end
