@@ -6,6 +6,13 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
     @json = Location.all.to_gmaps4rails
+    @polyjson = []
+    points = []
+
+    Location.all.each do |l|
+      points << {:lng => l.longitude, :lat => l.latitude}
+    end
+    @polyjson = [points].to_json
     
     respond_to do |format|
       format.html # index.html.erb

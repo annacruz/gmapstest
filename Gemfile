@@ -5,7 +5,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'gmaps4rails'
 gem 'thin'
-
+gem 'pry'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
