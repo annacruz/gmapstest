@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'sqlite3'
+# gem 'sqlite3'
 gem 'jquery-rails'
 gem 'gmaps4rails'
+gem 'mongo_mapper'
+gem 'bson_ext'
 gem 'thin'
 gem 'pry'
 
